@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+    <title>Dades de MongoDB</title>
+    <script src="./Exercici consultes Mongo ofuscat.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #1774b3;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        main {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #llista-textos {
+            list-style-type: none;
+            padding: 0;
+        }
+        li{
+            overflow-x: auto;
+        }
+        #llista-textos li {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .text-xifrat {
+            background-color: #fff;
+            color:#1774b3;
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+
+        .text-desxifrat {
+            background-color: #e0f7e9;
+            padding: 8px;
+            border-radius: 4px;
+            text-indent: 10em;
+        }
+    </style>
+    </head>
+    <body>
+        <header>
+            <h1>mongoDB-queries</h1>
+        </header>
+        <main>
+            <ul id="llistat"></ul>
+    <script>
+
+        const llistatDiv = document.getElementById("llistat");
+
+        for (const str of x) {
+
+            const liTag = document.createElement("LI");
+
+            const dv1Tag = document.createElement("DIV");
+            dv1Tag.appendChild(document.createTextNode(str));
+            dv1Tag.setAttribute("class","text-xifrat");
+            liTag.appendChild(dv1Tag);
+
+            const dv2Tag = document.createElement("DIV");
+            dv2Tag.appendChild(document.createTextNode(desofuscarCadena(str)));
+            dv2Tag.setAttribute("class","text-desxifrat");
+            liTag.appendChild(dv2Tag);
+            
+            llistatDiv.appendChild(liTag);
+
+        }
+
+        function ofuscarCadena(cadena) {
+            try {
+                const cadenaCodificada = btoa(cadena);
+                return cadenaCodificada;
+            } catch (error) {
+                console.error("Error en l'ofuscació:", error);
+                return null;
+            }
+        }
+
+        function desofuscarCadena(cadenaCodificada) {
+            try {
+                const cadenaDecodificada = atob(cadenaCodificada);
+                return cadenaDecodificada;
+            } catch (error) {
+                console.error("Error en la desofuscació:", error);
+                return null;
+            }
+        }
+
+    </script>
+    </body>
+    </html>
