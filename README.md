@@ -1,16 +1,23 @@
 Description - Statement of the exercise:
-    
+    Exercici consultes Mongo ofuscat.js
+        Base64  Obfuscated queries
+    Exercici consultes Mongo sense ofuscar.js
+        You wanted without obfuscating
+    Exercici consultes Mongo.txt
+        Notes on consultations.
+    consultesMongo.html
+        Contains a call to the obfuscated javascript file.
 Technologies Used:
     MongoDb database
 Requirements:
     A MongoDb database.
     
 Installation:
- 
+    NO installation required.
 execution
-    
+    The file consultesMongo.html, must be opened with a web browser.
 Deployment:
-    
+    It does NOT require deployment.
 Contributions:
     1. Fork the project:
     
